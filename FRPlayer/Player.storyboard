@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yiN-Yl-7f2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="6DQ-D5-E5a">
+            <objects>
+                <viewController id="yiN-Yl-7f2" customClass="PlayerViewController" customModule="FRPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Us0-mR-gSs"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyW-ba-KMh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="psi-D2-5Z2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmA-Dt-pLJ" customClass="PlayerView" customModule="FRPlayer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xUD-C5-I7G">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-Rj-ZYg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="HEa-jf-FUT" kind="embed" id="Ub3-rI-ulr"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dyW-ba-KMh" firstAttribute="top" secondItem="V2S-Rj-ZYg" secondAttribute="bottom" id="3nE-ou-Gnt"/>
+                            <constraint firstItem="xUD-C5-I7G" firstAttribute="centerX" secondItem="psi-D2-5Z2" secondAttribute="centerX" id="8xt-qF-jEd"/>
+                            <constraint firstItem="V2S-Rj-ZYg" firstAttribute="top" secondItem="psi-D2-5Z2" secondAttribute="top" id="IDu-D1-xlg"/>
+                            <constraint firstItem="mmA-Dt-pLJ" firstAttribute="leading" secondItem="psi-D2-5Z2" secondAttribute="leading" id="Kjj-tt-FKF"/>
+                            <constraint firstAttribute="trailing" secondItem="mmA-Dt-pLJ" secondAttribute="trailing" id="MzD-4l-5cS"/>
+                            <constraint firstItem="mmA-Dt-pLJ" firstAttribute="top" secondItem="psi-D2-5Z2" secondAttribute="top" id="ReZ-Jt-JIG"/>
+                            <constraint firstItem="V2S-Rj-ZYg" firstAttribute="leading" secondItem="psi-D2-5Z2" secondAttribute="leading" id="TDh-Ct-raA"/>
+                            <constraint firstItem="dyW-ba-KMh" firstAttribute="top" secondItem="mmA-Dt-pLJ" secondAttribute="bottom" id="aWE-GP-sgl"/>
+                            <constraint firstAttribute="trailing" secondItem="V2S-Rj-ZYg" secondAttribute="trailing" id="mBp-la-hXj"/>
+                            <constraint firstItem="xUD-C5-I7G" firstAttribute="centerY" secondItem="psi-D2-5Z2" secondAttribute="centerY" id="qhp-Km-bru"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="xUD-C5-I7G" id="bHg-ot-aXp"/>
+                        <outlet property="controlbarContainerView" destination="V2S-Rj-ZYg" id="Ilg-bE-yCo"/>
+                        <outlet property="playerView" destination="mmA-Dt-pLJ" id="xed-0K-eMO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdf-ka-Ypr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="141.67916041979012"/>
+        </scene>
+        <!--Controlbar-->
+        <scene sceneID="18w-bT-E74">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Controlbar" id="HEa-jf-FUT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bay-4G-fyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166" y="607"/>
+        </scene>
+    </scenes>
+</document>
